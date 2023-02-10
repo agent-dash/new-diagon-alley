@@ -2,6 +2,6 @@
 
 session_start();
 session_unset();
-header("location:vendor.php");
+header("location:index.php");
 
 ?>

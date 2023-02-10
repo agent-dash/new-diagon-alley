@@ -1,9 +1,9 @@
 <?php 
 session_start();
-if (isset($_SESSION['customer'])) {
-  header("location:cust-index.php");
+if (isset($_SESSION['user']) && $_SESSION['user'] == true) {
+} else {
+    header('Location: login.php');
 }
-
 include("connection.php");
 error_reporting(0);
 
@@ -11,12 +11,13 @@ error_reporting(0);
 <!DOCTYPE html>
 <html>
 <head>
-<title>Grocery Store</title>
+<title>Diagon Alley</title>
+<link rel="icon" href="./images/Diagon Alley Icon.ico" type="image/ico">
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta property="og:title" content="Vide" />
-<meta name="keywords" content="Grocery Store" />
+<meta name="keywords" content="Diagon Alley" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
 function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- //for-mobile-apps -->
@@ -69,21 +70,18 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 </head>
 <body>
-<a href="offer.php"><img src="images/download.png" class="img-head" alt=""></a>
+<a href="index.php"><img src="images/Diagon Alley Logo.png" class="img-head" alt="" width="200" height="150"></a>
 <div class="header">
 
 		<div class="container">
 			
 			<div class="logo">
-				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Grocery Store<span>The Best Supermarket</span></a></h1>
+				<h1 ><a href="index.php"><b>T<br>H<br>E</b>Diagon Alley<span>Fortius Quo Fidelius</span></a></h1>
 			</div>
 			<div class="head-t">
 				<ul class="card">
-					<li><a href="login.php" ><i class="fa fa-user" aria-hidden="true"></i>Login</a></li>
-					<li><a href="register.php" ><i class="fa fa-arrow-right" aria-hidden="true"></i>Register</a></li>
-					<li><a href="vendor-index.php" ><i class="fa fa-user" aria-hidden="true"></i>Vendor Login</a></li>
-					<li><a href="about.php" ><i class="fa fa-file-text-o" aria-hidden="true"></i>About Us</a></li>
-					<li><a href="shipping.php" ><i class="fa fa-ship" aria-hidden="true"></i>Shipping</a></li>
+					<li><a href="products.php" ><i class="fa fa-user" aria-hidden="true"></i>Seller Portal</a></li>
+					<li><a href="vendor-logout.php" ><i class="fa fa-file-text-o" aria-hidden="true"></i>Logout</a></li>
 				</ul>	
 			</div>
 			
@@ -183,7 +181,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										$image= $s.$ext;
 										?>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Wishlist</button>
 										</div>
 										
 									</div>
@@ -239,7 +237,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										$image= $s.$ext;
 										?>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Wishlist</button>
 										</div>
 										
 									</div>
@@ -295,7 +293,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										$image= $s.$ext;
 										?>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Wishlist</button>
 										</div>
 										
 									</div>
@@ -351,7 +349,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										$image= $s.$ext;
 										?>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Wishlist</button>
 										</div>
 										
 									</div>
@@ -514,7 +512,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 										$image= $s.$ext;
 										?>
 										<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b " data-id="<?php echo $res2['product_id']; ?>" data-name= "<?php echo $res2['product_title'];?>"data-summary="summary 1" data-price="<?php echo $res2['product_price'];?>" data-quantity="1" data-image="<?php echo $image; ?>">Add to Wishlist</button>
 										</div>
 										
 									</div>
@@ -540,7 +538,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="images/of17.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="images/of17.png">Add to Wishlist</button>
 										</div>
 									</div>
 								</div>
@@ -562,7 +560,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="images/of18.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="images/of18.png">Add to Wishlist</button>
 										</div>
 									</div>
 								</div>
@@ -584,7 +582,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="images/of19.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="images/of19.png">Add to Wishlist</button>
 										</div>
 									</div>
 								</div>
@@ -607,7 +605,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of20.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="6.00" data-quantity="1" data-image="images/of20.png">Add to Wishlist</button>
 										</div>
 									</div>
 								</div>
@@ -629,7 +627,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="images/of21.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="4.50" data-quantity="1" data-image="images/of21.png">Add to Wishlist</button>
 										</div>
 									</div>
 								</div>
@@ -651,7 +649,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="images/of22.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="3.50" data-quantity="1" data-image="images/of22.png">Add to Wishlist</button>
 										</div>
 									</div>
 								</div>
@@ -673,7 +671,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 											<div class="clearfix"></div>
 										</div>
 											<div class="add">
-										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-b" data-id="1" data-name="product 1" data-summary="summary 1" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Wishlist</button>
 										</div>
 									</div>
 								</div>
@@ -683,8 +681,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		</div>
 	</div>
 
-<!--footer-->
-<?php include_once("footer.php"); ?>
 <!-- //footer-->
 
 <!-- smooth scrolling -->
@@ -803,7 +799,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="2" data-name="Sunflower Oil" data-summary="summary 2" data-price="9.00" data-quantity="1" data-image="images/of1.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="2" data-name="Sunflower Oil" data-summary="summary 2" data-price="9.00" data-quantity="1" data-image="images/of1.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -835,7 +831,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -867,7 +863,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="4" data-name="Soya Chunks" data-summary="summary 4" data-price="3.50" data-quantity="1" data-image="images/of3.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="4" data-name="Soya Chunks" data-summary="summary 4" data-price="3.50" data-quantity="1" data-image="images/of3.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -899,7 +895,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="5" data-name="Lays" data-summary="summary 5" data-price="0.70" data-quantity="1" data-image="images/of4.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -931,7 +927,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="images/of5.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="6" data-name="Kurkure" data-summary="summary 6" data-price="0.70" data-quantity="1" data-image="images/of5.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -963,7 +959,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="images/of6.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="7" data-name="Popcorn" data-summary="summary 7" data-price="1.00" data-quantity="1" data-image="images/of6.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -995,7 +991,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="images/of7.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="8" data-name="Nuts" data-summary="summary 8" data-price="3.50" data-quantity="1" data-image="images/of7.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1027,7 +1023,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="9" data-name="Banana" data-summary="summary 9" data-price="1.50" data-quantity="1" data-image="images/of8.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1059,7 +1055,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="images/of9.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="10" data-name="Onion" data-summary="summary 10" data-price="0.70" data-quantity="1" data-image="images/of9.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1091,7 +1087,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="images/of10.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="11" data-name="Bitter Gourd" data-summary="summary 11" data-price="1.00" data-quantity="1" data-image="images/of10.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1123,7 +1119,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="images/of11.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="12" data-name="Apples" data-summary="summary 12" data-price="3.50" data-quantity="1" data-image="images/of11.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1155,7 +1151,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="images/of12.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="13" data-name="Honey" data-summary="summary 13" data-price="6.00" data-quantity="1" data-image="images/of12.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1187,7 +1183,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="images/of13.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="14" data-name="Chocos" data-summary="summary 14" data-price="4.50" data-quantity="1" data-image="images/of13.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1219,7 +1215,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="images/of14.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="15" data-name="Oats" data-summary="summary 15" data-price="3.50" data-quantity="1" data-image="images/of14.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1251,7 +1247,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="images/of15.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="16" data-name="Bread" data-summary="summary 16" data-price="0.80" data-quantity="1" data-image="images/of15.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1283,7 +1279,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="17" data-name="Moisturiser" data-summary="summary 17" data-price="0.80" data-quantity="1" data-image="images/of16.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="17" data-name="Moisturiser" data-summary="summary 17" data-price="0.80" data-quantity="1" data-image="images/of16.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1315,7 +1311,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="18" data-name="Lady Finger" data-summary="summary 18" data-price="0.80" data-quantity="1" data-image="images/of17.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="18" data-name="Lady Finger" data-summary="summary 18" data-price="0.80" data-quantity="1" data-image="images/of17.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1347,7 +1343,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="19" data-name="Satin Ribbon Red" data-summary="summary 19" data-price="0.80" data-quantity="1" data-image="images/of18.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="19" data-name="Satin Ribbon Red" data-summary="summary 19" data-price="0.80" data-quantity="1" data-image="images/of18.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1379,7 +1375,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="20" data-name="Grapes" data-summary="summary 20" data-price="0.80" data-quantity="1" data-image="images/of19.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="20" data-name="Grapes" data-summary="summary 20" data-price="0.80" data-quantity="1" data-image="images/of19.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1411,7 +1407,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="21" data-name="Clips" data-summary="summary 21" data-price="0.80" data-quantity="1" data-image="images/of20.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="21" data-name="Clips" data-summary="summary 21" data-price="0.80" data-quantity="1" data-image="images/of20.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1443,7 +1439,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="22" data-name="Conditioner" data-summary="summary 22" data-price="0.80" data-quantity="1" data-image="images/of21.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="22" data-name="Conditioner" data-summary="summary 22" data-price="0.80" data-quantity="1" data-image="images/of21.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1475,7 +1471,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="23" data-name="Cleaner" data-summary="summary 23" data-price="0.80" data-quantity="1" data-image="images/of22.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="23" data-name="Cleaner" data-summary="summary 23" data-price="0.80" data-quantity="1" data-image="images/of22.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>
@@ -1507,7 +1503,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 									<h4 class="quick">Quick Overview:</h4>
 									<p class="quick_desc"> Product Description .......</p>
 									 <div class="add-to">
-										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Gel" data-summary="summary 24" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Cart</button>
+										   <button class="btn btn-danger my-cart-btn my-cart-btn1 " data-id="24" data-name="Gel" data-summary="summary 24" data-price="0.80" data-quantity="1" data-image="images/of23.png">Add to Wishlist</button>
 										</div>
 								</div>
 								<div class="clearfix"> </div>

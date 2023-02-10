@@ -4,7 +4,7 @@ session_start();
 include("connection.php");
 error_reporting(0);
 
-if(!isset($_SESSION['customer']))
+if(!isset($_SESSION['user']))
 {
 	header("location:login.php");
 }

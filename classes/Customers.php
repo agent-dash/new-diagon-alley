@@ -19,7 +19,7 @@ class Customers
 		
 		$uname= $_SESSION['user'];
 		if($uname != 'malbok@gmail.com'){
-			$query = $this->con->query("SELECT username, email, phone, street, city, pincode FROM customers WHERE  pincode = (SELECT pincode FROM vendors WHERE email='$uname') AND email IN (SELECT buyer_email FROM orders WHERE vendor_name='$uname')");
+			$query = $this->con->query("SELECT username, email, phone, street, city, pincode FROM users WHERE  pincode = (SELECT pincode FROM vendors WHERE email='$uname') AND email IN (SELECT buyer_email FROM orders WHERE vendor_name='$uname')");
 			$ar = [];
 			if (@$query->num_rows > 0) {
 				while ($row = $query->fetch_assoc()) {
@@ -30,7 +30,7 @@ class Customers
 			return ['status'=> 303, 'message'=> 'no customer data'];
 		}
 		else{
-			$query = $this->con->query("SELECT `username`, `email`, `phone`, `street`, `city`, `pincode` FROM `customers`");
+			$query = $this->con->query("SELECT `username`, `email`, `phone`, `street`, `city`, `pincode` FROM `users`");
 			$ar = [];
 			if (@$query->num_rows > 0) {
 				while ($row = $query->fetch_assoc()) {

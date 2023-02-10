@@ -1,10 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['user']))
-{
-	header("location:vendor-index.php");
-}
-$cust= $_SESSION['customer'];
+$cust= $_SESSION['user'];
 include("connection.php");
 error_reporting(0);
 ?>
@@ -172,7 +168,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						$passwd= $_POST['Password'];
 
 						if($email != "" && $passwd != ""){
-							$query= "SELECT * from vendors where email='$email' && password='$passwd'";
+							$query= "SELECT * from users where email='$email' && password='$passwd'";
 							$data= mysqli_query($conn, $query);
 							$total= mysqli_num_rows($data);
 							if($total == 1){
