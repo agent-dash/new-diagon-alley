@@ -115,8 +115,7 @@
         		<div class="col-12">
         			<button type="button" class="btn btn-primary add-product">Add Product</button>
         		</div>
-        	</div>
-        	
+        	</div>        	
         </form>
       </div>
     </div>
@@ -189,8 +188,7 @@
             <div class="col-12">
               <button type="button" class="btn btn-primary submit-edit-product">Add Product</button>
             </div>
-          </div>
-          
+          </div>          
         </form>
       </div>
     </div>

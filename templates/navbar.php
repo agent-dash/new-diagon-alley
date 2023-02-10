@@ -7,11 +7,7 @@
     		if (isset($_SESSION['user'])) {
     			?>
                 <li class="nav-item ">
-    				<a class="nav-link" href="./vendor-logout.php">Sign out</a>
-                </li>
-                 <li class="nav-item ">
-                    <a class="nav-link" href="#" data-toggle="modal" data-target="#change">Change Password</a>
-                </li>    
+    				<a class="nav-link" href="./index.php">Go To Shopping Page</a> 
     			<?php
     		}/*else{
     			$uriAr = explode("/", $_SERVER['REQUEST_URI']);

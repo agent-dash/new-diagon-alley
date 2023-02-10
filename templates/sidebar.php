@@ -22,47 +22,12 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'customer_orders.php') ? 'active' : ''; ?>" href="customer_orders.php">
-              <span data-feather="file"></span>
-              Orders
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link <?php echo ($page == 'products.php') ? 'active' : ''; ?>" href="products.php">
               <span data-feather="shopping-cart"></span>
               Products
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="brands.php">
-              <span data-feather="shopping-cart"></span>
-              Brands
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="categories.php">
-              <span data-feather="shopping-cart"></span>
-              Categories
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'customers.php') ? 'active' : ''; ?>" href="customers.php">
-              <span data-feather="users"></span>
-              Customers
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'delivery.php') ? 'active' : ''; ?>" href="delivery.php">
-              <span data-feather="truck"></span>
-              Deliveries
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'payments.php') ? 'active' : ''; ?>" href="payments.php">
-              <span data-feather="dollar-sign"></span>
-              Payments
-            </a>
-          </li>
+          
           <?php }
           else {?>
             
@@ -73,39 +38,9 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'customer_orders.php') ? 'active' : ''; ?>" href="customer_orders.php">
-              <span data-feather="file"></span>
-              Orders
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link <?php echo ($page == 'products.php') ? 'active' : ''; ?>" href="products.php">
               <span data-feather="shopping-cart"></span>
               Products
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'brands.php') ? 'active' : ''; ?>" href="brands.php">
-              <span data-feather="shopping-cart"></span>
-              Brands
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'categories.php') ? 'active' : ''; ?>" href="categories.php">
-              <span data-feather="shopping-cart"></span>
-              Categories
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'delivery.php') ? 'active' : ''; ?>" href="delivery.php">
-              <span data-feather="truck"></span>
-             Deliveries
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link <?php echo ($page == 'customers.php') ? 'active' : ''; ?>" href="customers.php">
-              <span data-feather="users"></span>
-              Customers
             </a>
           </li>
         <?php } ?>
